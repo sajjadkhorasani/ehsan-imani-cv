@@ -60,6 +60,12 @@ section li {
 	list-style-type: disc;
 }
 
+@media screen and (max-width: 1200px) {
+	section li {
+		margin-inline-start: 2rem;
+	}
+}
+
 table {
 	margin: 1rem;
 	border-collapse: collapse;
