@@ -53,10 +53,12 @@
 	padding: 0;
 	list-style: none;
 	margin-bottom: auto;
+	margin-inline-start: 1.5rem;
 }
 
 .left_wrapper_dark li,
 .left_wrapper_light li {
+	list-style-type: none;
 	margin-inline-start: 0;
 	padding-inline-start: 1rem;
 	padding-inline-end: 1rem;

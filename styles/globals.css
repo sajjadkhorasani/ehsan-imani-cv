@@ -48,13 +48,15 @@ h4 {
 
 li {
 	margin-inline-start: 1.5rem;
+	padding-inline-start: 1.5rem;
 	margin-top: 0.2rem;
 	line-height: 1.5rem;
 	list-style-type: circle;
+	text-indent: -1.5em;
 }
 
 section li {
-	margin-inline-start: 10rem;
+	margin-inline-start: 10.2rem;
 	margin-top: 0.2rem;
 	line-height: 1.5rem;
 	list-style-type: disc;
