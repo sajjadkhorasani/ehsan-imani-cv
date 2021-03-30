@@ -1,25 +1,83 @@
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import Head from 'next/head';
-import {useEffect, useState} from 'react';
+import Link from 'next/link';
+import {useState} from 'react';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
 	const [darkMode, setDarkMode] = useState(false);
-
-	useEffect(() => {
-		console.log(document.body.scrollTop);
-	}, [document.body]);
-
 	return (
 		<div className={darkMode ? styles.container_dark : styles.container_light}>
-			<div className={darkMode ? styles.left_wrapper_dark : styles.left_wrapper_light}></div>
+			<div className={darkMode ? styles.left_wrapper_dark : styles.left_wrapper_light}>
+				<span>Ehsan Imani</span>
+				<ul>
+					<li>
+						<Link href='#about-me' passHref>
+							<a>ABOUT ME</a>
+						</Link>
+					</li>
+					<li>
+						<Link href='#education' passHref>
+							<a>EDUCATION</a>
+						</Link>
+					</li>
+					<li>
+						<Link href='#experience' passHref>
+							<a>EXPERIENCE</a>
+						</Link>
+					</li>
+					<li>
+						<Link href='#certificates' passHref>
+							<a>CERTIFICATES</a>
+						</Link>
+					</li>
+					<li>
+						<Link href='#skills' passHref>
+							<a>SKILLS</a>
+						</Link>
+					</li>
+					<li>
+						<Link href='#language-skills' passHref>
+							<a>ENGLISH LANGUAGE SKILLS</a>
+						</Link>
+					</li>
+					<li>
+						<Link href='#teaching-experience' passHref>
+							<a>TEACHING EXPERIENCE</a>
+						</Link>
+					</li>
+				</ul>
+
+				<p>All Information Reserved Copyright © 2021 Ehsan Imani</p>
+			</div>
 			<div className={styles.self_page}>
 				<Head>
-					<title>Create Next App</title>
+					<title>Ehsan Imani Resume</title>
 					<link rel='icon' href='/favicon.ico' />
 				</Head>
 
 				<header className={styles.header}>
+					<Link href='tel:09120413526' passHref>
+						<a target='_blank'>
+							<FontAwesomeIcon icon='phone-alt' color='#15AABF' />
+							(+98) 09120413526
+						</a>
+					</Link>
+					<Link
+						href='https://www.linkedin.com/in/ehsan-imanii?trk=people-guest_people_search-card'
+						passHref>
+						<a target='blank'>
+							<FontAwesomeIcon icon={['fab', 'linkedin']} color='#0077B5' />
+							Linkdin
+						</a>
+					</Link>
+					<Link href='mailto:ehsanimani1000@yahoo.com?subject=test&body=test' passHref>
+						<a target='_blank'>
+							<FontAwesomeIcon icon='envelope-open-text' color='#82C91E' />
+							ehsanimani1000@yahoo.com
+						</a>
+					</Link>
+
 					<button onClick={() => setDarkMode(!darkMode)}>
 						<FontAwesomeIcon icon='adjust' size='2x' />
 					</button>
@@ -30,7 +88,7 @@ export default function Home() {
 					<small>Born May 28,1996 in Tehran</small>
 
 					<div className={styles.card}>
-						<h3>ABOUT ME</h3>
+						<h3 id='about-me'>ABOUT ME</h3>
 						<p>
 							I am a network engineer and have been studying conputer network and computer network
 							security since 2015. My major studies are in CISCO technologies, JUNIPER Networks
@@ -40,13 +98,13 @@ export default function Home() {
 					</div>
 
 					<div className={styles.card}>
-						<h3>EDUCATION</h3>
+						<h3 id='education'>EDUCATION</h3>
 						<h4>● Karaj Islamic Azad University</h4>
 						<p>2015- 2020 | Bacheler of Computer software Engineering</p>
 					</div>
 
 					<div className={styles.card}>
-						<h3>EXPERIENCE</h3>
+						<h3 id='experience'>EXPERIENCE</h3>
 						<h4>2016-2018 ZAP Consulting Engineers</h4>
 						<section>
 							<li>Network Administrator</li>
@@ -68,7 +126,7 @@ export default function Home() {
 					</div>
 
 					<div className={styles.card}>
-						<h3>CERTIFICATES</h3>
+						<h3 id='certificates'>CERTIFICATES</h3>
 						<span>CCNA R&S issued by Cisco (March 15,2017)</span>
 						<span>CCNP R&S issued by MFT (2016)</span>
 						<span>CCIE R&S issued bt Candoo institute (2017)</span>
@@ -82,7 +140,7 @@ export default function Home() {
 					</div>
 
 					<div className={styles.card}>
-						<h3>SKILLS</h3>
+						<h3 id='skills'>SKILLS</h3>
 						<li>
 							Ability to implement and configure JuniperNetworks Firewalls and Routers(SRX,MX) JNCIA
 							&JNCIS
@@ -99,38 +157,44 @@ export default function Home() {
 					</div>
 
 					<div className={styles.card}>
-						<h3>ENGLISH LANGUAGE SKILLS</h3>
+						<h3 id='language-skills'>ENGLISH LANGUAGE SKILLS</h3>
 						<table>
 							<thead></thead>
 							<tbody>
 								<tr>
 									<td>Speaking</td>
-									<td>&#x2B22;&#x2B22;&#x2B22;&#x2B22;&#x2B22;</td>
+									<td>
+										&#x2B22;&#x2B22;&#x2B22;&#x2B22;<b>&#x2B22;</b>
+									</td>
 								</tr>
 								<tr>
 									<td>Listening</td>
-									<td>&#x2B22;&#x2B22;&#x2B22;&#x2B22;&#x2B22;</td>
+									<td>
+										&#x2B22;&#x2B22;&#x2B22;&#x2B22;<b>&#x2B22;</b>
+									</td>
 								</tr>
 								<tr>
 									<td>Reading</td>
-									<td>&#x2B22;&#x2B22;&#x2B22;&#x2B22;&#x2B22;</td>
+									<td>
+										&#x2B22;&#x2B22;&#x2B22;&#x2B22;<b>&#x2B22;</b>
+									</td>
 								</tr>
 								<tr>
 									<td>Writing</td>
-									<td>&#x2B22;&#x2B22;&#x2B22;&#x2B22;&#x2B22;</td>
+									<td>
+										&#x2B22;&#x2B22;&#x2B22;&#x2B22;<b>&#x2B22;</b>
+									</td>
 								</tr>
 							</tbody>
 						</table>
 					</div>
 
 					<div className={styles.card}>
-						<h3>TEACHING EXPERIENCE</h3>
+						<h3 id='teaching-experience'>TEACHING EXPERIENCE</h3>
 						<li>Fortinet Firewall CBT</li>
 						<li>Juniper Firewall (SRX) CBT</li>
 					</div>
 				</main>
-
-				<footer className={darkMode ? styles.footer_dark : styles.footer_light}></footer>
 			</div>
 		</div>
 	);

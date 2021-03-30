@@ -13,12 +13,22 @@ body {
 	height: 100vh;
 	font-family: consolas;
 	overflow: hidden;
-	overflow-y: auto;
+	user-select: none;
 }
 
 a {
-	color: inherit;
+	color: #0070f3;
 	text-decoration: none;
+	transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+a:hover,
+a:focus,
+a:active {
+	transform: scale(1.2);
+	color: white;
+	mix-blend-mode: difference;
+	transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 h3 {
@@ -55,8 +65,14 @@ table {
 	border-collapse: collapse;
 }
 
-table td:last-child::first-letter {
-	color: rgba(0, 0, 0, 0.3);
+table tr :last-child {
+	background: black;
+	color: white;
+	mix-blend-mode: difference;
+}
+
+table td:last-child b {
+	color: rgba(255, 255, 255, 0.3);
 }
 
 small {
@@ -83,8 +99,13 @@ span::before {
 	content: '⊛ ';
 }
 
-* {
+*:not(svg) {
 	box-sizing: border-box;
 	background: inherit;
 	color: inherit;
+}
+
+svg {
+	box-sizing: border-box;
+	position: relative;
 }
