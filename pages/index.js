@@ -2,33 +2,53 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import Head from 'next/head';
 import Link from 'next/link';
 import {useRouter} from 'next/router';
-import {useEffect, useRef, useState} from 'react';
+import {useRef, useState} from 'react';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
+	const [menu, setMenu] = useState(true);
+	const [scroll, setScroll] = useState(0);
 	const router = useRouter();
 	const [darkMode, setDarkMode] = useState(false);
 	const pageRef = useRef(null);
-	const activePath = (path) => (router.asPath.replace('/', '') === path ? styles.link_active : '');
+	const activePath = (path) => {
+		return router.asPath.replace('/', '') === path ? styles.link_active : styles.menu_link;
+	};
+
+	const onClickLink = (e) => {
+		e.preventDefault();
+		setMenu(false);
+	};
 
 	const scrollReset = (e) => {
 		e.preventDefault();
 		pageRef.current.scrollTo(0, 0);
 	};
 
-	useEffect(() => {
-		console.log(pageRef.current.scrollTop);
-	}, [router.query.counter]);
+	const setScrollTop = (e) => {
+		setScroll(pageRef.current.scrollTop);
+	};
 
 	return (
 		<>
-			<button className={styles.reset_scroll} onClick={scrollReset}>
+			<Head>
+				<title>Ehsan Imani</title>
+				<link rel='icon' href='/favicon.ico' />
+			</Head>
+
+			<button className={styles.reset_scroll} onClick={scrollReset} disabled={scroll < 500}>
 				&#129045;
 			</button>
+
 			<div className={darkMode ? styles.container_dark : styles.container_light}>
-				<div className={darkMode ? styles.left_wrapper_dark : styles.left_wrapper_light}>
-					<span>Ehsan Imani</span>
-					<ul>
+				<div
+					className={darkMode ? styles.left_wrapper_dark : styles.left_wrapper_light}
+					data-show={menu}>
+					<div>
+						<span>Ehsan Imani</span>
+						<button onClick={() => setMenu(false)}>x</button>
+					</div>
+					<ul onClick={onClickLink}>
 						<li className={activePath('#about-me')}>
 							<Link href='#about-me' passHref>
 								<a>ABOUT ME</a>
@@ -68,13 +88,12 @@ export default function Home() {
 
 					<p>All Information Reserved Copyright © 2021 Ehsan Imani</p>
 				</div>
-				<div ref={pageRef} className={styles.self_page}>
-					<Head>
-						<title>Ehsan Imani Resume</title>
-						<link rel='icon' href='/favicon.ico' />
-					</Head>
 
+				<div ref={pageRef} className={styles.self_page} onScroll={setScrollTop}>
 					<header className={styles.header}>
+						<button onClick={() => setMenu(!menu)}>
+							<FontAwesomeIcon icon='bars' size='2x' />
+						</button>
 						<button onClick={() => setDarkMode(!darkMode)}>
 							<FontAwesomeIcon icon='adjust' size='2x' />
 						</button>
