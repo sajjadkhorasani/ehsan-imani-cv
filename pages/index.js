@@ -6,7 +6,7 @@ import {useRef, useState} from 'react';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
-	const [menu, setMenu] = useState(true);
+	const [menu, setMenu] = useState(false);
 	const [scroll, setScroll] = useState(0);
 	const router = useRouter();
 	const [darkMode, setDarkMode] = useState(false);
@@ -37,7 +37,7 @@ export default function Home() {
 			</Head>
 
 			<button className={styles.reset_scroll} onClick={scrollReset} disabled={scroll < 500}>
-				&#129045;
+				<FontAwesomeIcon icon='arrow-up' size='1x' />
 			</button>
 
 			<div className={darkMode ? styles.container_dark : styles.container_light}>
@@ -46,7 +46,9 @@ export default function Home() {
 					data-show={menu}>
 					<div>
 						<span>Ehsan Imani</span>
-						<button onClick={() => setMenu(false)}>x</button>
+						<button onClick={() => setMenu(false)}>
+							<FontAwesomeIcon icon={['far', 'times-circle']} size='1x' />
+						</button>
 					</div>
 					<ul onClick={onClickLink}>
 						<li className={activePath('#about-me')}>
@@ -180,25 +182,49 @@ export default function Home() {
 									<tr>
 										<td>Speaking</td>
 										<td>
-											&#x2B22;&#x2B22;&#x2B22;&#x2B22;<b>&#x2B22;</b>
+											<div>
+												<FontAwesomeIcon icon='award' color='#fff' size='1x' />
+												<FontAwesomeIcon icon='award' color='#fff' size='1x' />
+												<FontAwesomeIcon icon='award' color='#fff' size='1x' />
+												<FontAwesomeIcon icon='award' color='#fff' size='1x' />
+												<FontAwesomeIcon icon='award' color='#fff' size='1x' />
+											</div>
 										</td>
 									</tr>
 									<tr>
 										<td>Listening</td>
 										<td>
-											&#x2B22;&#x2B22;&#x2B22;&#x2B22;<b>&#x2B22;</b>
+											<div>
+												<FontAwesomeIcon icon='award' color='#fff' size='1x' />
+												<FontAwesomeIcon icon='award' color='#fff' size='1x' />
+												<FontAwesomeIcon icon='award' color='#fff' size='1x' />
+												<FontAwesomeIcon icon='award' color='#fff' size='1x' />
+												<FontAwesomeIcon icon='award' color='#fff' size='1x' />
+											</div>
 										</td>
 									</tr>
 									<tr>
 										<td>Reading</td>
 										<td>
-											&#x2B22;&#x2B22;&#x2B22;&#x2B22;<b>&#x2B22;</b>
+											<div>
+												<FontAwesomeIcon icon='award' color='#fff' size='1x' />
+												<FontAwesomeIcon icon='award' color='#fff' size='1x' />
+												<FontAwesomeIcon icon='award' color='#fff' size='1x' />
+												<FontAwesomeIcon icon='award' color='#fff' size='1x' />
+												<FontAwesomeIcon icon='award' color='#fff' size='1x' />
+											</div>
 										</td>
 									</tr>
 									<tr>
 										<td>Writing</td>
 										<td>
-											&#x2B22;&#x2B22;&#x2B22;&#x2B22;<b>&#x2B22;</b>
+											<div>
+												<FontAwesomeIcon icon='award' color='#fff' size='1x' />
+												<FontAwesomeIcon icon='award' color='#fff' size='1x' />
+												<FontAwesomeIcon icon='award' color='#fff' size='1x' />
+												<FontAwesomeIcon icon='award' color='#fff' size='1x' />
+												<FontAwesomeIcon icon='award' color='#fff' size='1x' />
+											</div>
 										</td>
 									</tr>
 								</tbody>

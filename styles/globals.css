@@ -73,13 +73,20 @@ table {
 	border-collapse: collapse;
 }
 
-table tr :last-child {
-	background: black;
-	color: white;
+table td div {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
 	mix-blend-mode: difference;
+	background-color: black;
 }
 
-table td:last-child b {
+table td div svg {
+	width: 12px;
+	height: 12px;
+}
+
+table td div svg:last-child {
 	color: rgba(255, 255, 255, 0.3);
 }
 

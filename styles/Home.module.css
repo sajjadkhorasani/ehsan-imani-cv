@@ -66,6 +66,12 @@
 	border: none;
 }
 
+.left_wrapper_light div button svg,
+.left_wrapper_dark div button svg {
+	width: 20px;
+	height: 20px;
+}
+
 .left_wrapper_light span,
 .left_wrapper_dark span {
 	margin-inline-start: 0;
@@ -319,16 +325,22 @@
 	position: absolute;
 	mix-blend-mode: unset;
 	right: 3rem;
-	bottom: 5rem;
+	bottom: 3rem;
 	border: 1px solid rgba(0, 0, 0, 0.3);
 	border-radius: 5px;
 	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
 	background: white;
 	padding: 5px 10px;
+	color: rgba(0, 0, 0, 0.3);
 	cursor: pointer;
 	z-index: 5;
 	transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 	overflow: hidden;
+}
+
+.reset_scroll svg {
+	width: 10px;
+	height: 15px;
 }
 
 .reset_scroll:disabled {
@@ -339,8 +351,9 @@
 
 .reset_scroll:hover {
 	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+	color: black;
 	transform: scale(1.1) perspective(800);
-	animation: arrowAnimation 1s infinite alternate;
+	animation: arrowAnimation 0.5s infinite alternate;
 	transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -349,6 +362,6 @@
 		transform: translateY(0);
 	}
 	100% {
-		transform: translateY(10px);
+		transform: translateY(5px);
 	}
 }
