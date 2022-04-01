@@ -1,0 +1,16 @@
+.link {
+    position: relative;
+    display: flex;
+    justify-content: stretch;
+    align-items: stretch;
+    list-style-type: none;
+    margin-inline-start: -1.5rem;
+    padding-inline-start: 2rem;
+    padding-inline-end: 1rem;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.link_active {
+	box-shadow: inset 0 0 5px solid rgba(0, 0, 0, 0.1);
+	transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}

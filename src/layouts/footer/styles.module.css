@@ -1,0 +1,32 @@
+.footer {
+	width: 100%;
+	border-top: 1px solid var(--dark-dark-color);
+	mix-blend-mode: difference;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	flex-wrap: wrap;
+	background: transparent;
+	padding: 0.5rem 2rem;
+}
+
+.footer a {
+	position: relative;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	margin: 1rem;
+	color: white;
+}
+
+.footer a svg {
+	width: 20px;
+	height: 20px;
+	margin-inline-start: 10px;
+}
+
+@media screen and (max-width: 700px) {
+	.footer {
+		flex-direction: column;
+	}
+}

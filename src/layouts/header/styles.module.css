@@ -1,0 +1,33 @@
+.header {
+	width: 100%;
+	height: 100px;
+	border-bottom: 1px solid var(--dark-dark-color);
+	mix-blend-mode: difference;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: transparent;
+	padding: 0.5rem 2rem;
+}
+
+.header button {
+	position: relative;
+	width: 2.2rem;
+	height: 2.2rem;
+	border: 0;
+	padding: 0.5rem;
+	cursor: pointer;
+	background: transparent;
+	color: #e2e2e2;
+	mix-blend-mode: difference;
+	transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.header button svg {
+	transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.header button:hover svg {
+	transform: rotate(180deg) scale(1.2);
+	transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
